@@ -1,0 +1,7 @@
+{
+  "name": "CourseCorrect",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

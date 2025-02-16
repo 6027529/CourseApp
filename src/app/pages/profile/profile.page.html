@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profiel</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="user; else notLoggedIn">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Jouw Profiel</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Naam: {{ user.name }}</p>
+      <p>Email: {{ user.email }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ng-template #notLoggedIn>
+  <ion-text color="danger">
+    <h3>Geen gebruiker ingelogd</h3>
+    <p>Log in om je profiel te bekijken.</p>
+  </ion-text>
+</ng-template>
+
+

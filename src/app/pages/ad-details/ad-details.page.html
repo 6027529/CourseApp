@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Advertentie Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Toon de foutmelding als er een ongeldig ID is -->
+  <div *ngIf="errorMessage" class="error-message">
+    <ion-text color="danger">
+      <h3>{{ errorMessage }}</h3>
+    </ion-text>
+  </div>
+
+  <!-- Toon de advertentie als deze gevonden is -->
+  <div *ngIf="ad">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ ad.title }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{ ad.description }}</p>
+        <p><strong>Prijs:</strong> €{{ ad.price }}</p>
+        <ion-button [routerLink]="['/chat', adId]" expand="block">Chat met verkoper</ion-button>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

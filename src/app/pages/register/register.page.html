@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registreren</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="register()">
+    <input [(ngModel)]="name" name="name" type="text" placeholder="Naam" required />
+    <input [(ngModel)]="email" name="email" type="email" placeholder="E-mailadres" required />
+    <input [(ngModel)]="password" name="password" type="password" placeholder="Wachtwoord" required />
+    <input [(ngModel)]="confirmPassword" name="confirmPassword" type="password" placeholder="Bevestig wachtwoord" required />
+    
+    <button type="submit">Registreren</button>
+  </form>
+  
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+  
+
+  <!-- Toon een foutmelding indien nodig -->
+  <ion-text color="danger" *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </ion-text>
+</ion-content>
